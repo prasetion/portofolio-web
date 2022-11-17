@@ -16,10 +16,14 @@ import web3 from "../public/web3.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
-import { useState } from "react";
+import { useState, Suspense, useRef } from "react";
+import { Canvas } from "@react-three/fiber";
+import { Model } from "./Model";
+import { OrbitControls, Stage } from "@react-three/drei";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
+  const ref = useRef();
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -33,7 +37,7 @@ export default function Home() {
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between">
             <h1 className="text-xl font-burtons dark:text-gray-200">
-              prasetion
+              PRASETION
             </h1>
             <ul className="flex items-center">
               <li>
@@ -52,6 +56,21 @@ export default function Home() {
               </li>
             </ul>
           </nav>
+          <div className="md:h-80 lg:h-96">
+            <Canvas shadows dpr={[1, 2]} camera={{ fov: 50 }}>
+              <Suspense fallback={null}>
+                <Stage
+                  controls={ref}
+                  preset="rembrandt"
+                  intensity={1}
+                  environment="city"
+                >
+                  <Model />
+                </Stage>
+              </Suspense>
+              <OrbitControls ref={ref} autoRotate />
+            </Canvas>
+          </div>
           <div className="text-center p-10">
             <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl">
               Prasetio Nugroho
