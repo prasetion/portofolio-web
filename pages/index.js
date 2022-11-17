@@ -18,7 +18,7 @@ import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
 import { useState, Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Model } from "./Model";
+import { Model } from "../components/Model";
 import { OrbitControls, Stage } from "@react-three/drei";
 
 export default function Home() {
@@ -92,7 +92,12 @@ export default function Home() {
             <AiFillGithub className="dark:fill-white"></AiFillGithub>
           </div>
           <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
-            <Image src={prasetion} layout="fill" objectFit="cover"></Image>
+            <Image
+              src={prasetion}
+              layout="fill"
+              objectFit="cover"
+              alt=""
+            ></Image>
           </div>
         </section>
         <section>
@@ -120,6 +125,7 @@ export default function Home() {
                 width={100}
                 height={100}
                 className="mx-auto"
+                alt=""
               ></Image>
               <h3 className="text-lg font-medium pt-8 pb-2">Beautiful UI</h3>
               <p className="py-2">
@@ -137,6 +143,7 @@ export default function Home() {
                 width={100}
                 height={100}
                 className="mx-auto"
+                alt=""
               ></Image>
               <h3 className="text-lg font-medium pt-8 pb-2">Beautiful UI</h3>
               <p className="py-2">
@@ -154,6 +161,7 @@ export default function Home() {
                 width={100}
                 height={100}
                 className="mx-auto"
+                alt=""
               ></Image>
               <h3 className="text-lg font-medium pt-8 pb-2">Beautiful UI</h3>
               <p className="py-2">
@@ -184,6 +192,7 @@ export default function Home() {
                 className="rounded-lg object-cover"
                 width={"100%"}
                 height={"100%"}
+                alt=""
               ></Image>
             </div>
             <div className="basis-1/3 flex-1">
@@ -192,6 +201,7 @@ export default function Home() {
                 className="rounded-lg object-cover"
                 width={"100%"}
                 height={"100%"}
+                alt=""
               ></Image>
             </div>
             <div className="basis-1/3 flex-1">
@@ -200,6 +210,7 @@ export default function Home() {
                 className="rounded-lg object-cover"
                 width={"100%"}
                 height={"100%"}
+                alt=""
               ></Image>
             </div>
             <div className="basis-1/3 flex-1">
@@ -208,6 +219,7 @@ export default function Home() {
                 className="rounded-lg object-cover"
                 width={"100%"}
                 height={"100%"}
+                alt=""
               ></Image>
             </div>
             <div className="basis-1/3 flex-1">
@@ -216,6 +228,7 @@ export default function Home() {
                 className="rounded-lg object-cover"
                 width={"100%"}
                 height={"100%"}
+                alt=""
               ></Image>
             </div>
             <div className="basis-1/3 flex-1">
@@ -224,6 +237,7 @@ export default function Home() {
                 className="rounded-lg object-cover"
                 width={"100%"}
                 height={"100%"}
+                alt=""
               ></Image>
             </div>
           </div>
