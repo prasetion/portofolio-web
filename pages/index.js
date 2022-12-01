@@ -20,7 +20,7 @@ import { OrbitControls, Stage } from "@react-three/drei";
 import Link from "next/link";
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const ref = useRef();
 
   const openInNewTab = (url) => {
