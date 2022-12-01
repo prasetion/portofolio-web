@@ -17,6 +17,7 @@ import { useState, Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Model } from "../components/Model";
 import { OrbitControls, Stage } from "@react-three/drei";
+import Link from "next/link";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -55,14 +56,6 @@ export default function Home() {
                     />
                   )}
                 </li>
-                <li>
-                  <a
-                    className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8"
-                    href="#"
-                  >
-                    Resume
-                  </a>
-                </li>
               </ul>
             </nav>
             <div className="h-96 mb-10">
@@ -80,13 +73,13 @@ export default function Home() {
                 <OrbitControls ref={ref} autoRotate />
               </Canvas>
               <div className="text-center">
-                <a
+                <Link
                   href="https://skfb.ly/6WExH"
                   className=" text-gray-700 no-underline hover:underline text-sm dark:text-gray-300"
-                  target="_blank"
+                  target={"_blank"}
                 >
                   Model by Roman Mad
-                </a>
+                </Link>
               </div>
             </div>
             <div className="rounded bg-gray-200 p-4 text-center dark:text-gray-200 dark:bg-slate-600">
@@ -116,7 +109,7 @@ export default function Home() {
                 in programming. I have worked on several projects from concept
                 to completion. I am specialist in react to create front end and
                 unity engine to create AR/VR/MR. I am open and willing to learn
-                whatever is necessary to accomplish my client's goal.
+                whatever is necessary to accomplish my client&apos;s goal.
               </p>
             </div>
           </section>
