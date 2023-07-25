@@ -16,8 +16,11 @@ import web6 from "../public/web6.png";
 import { useState, Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Model } from "../components/Model";
-import { OrbitControls, Stage } from "@react-three/drei";
+import { Environment, OrbitControls, Stage, Gltf } from "@react-three/drei";
 import Link from "next/link";
+import { suspend } from "suspend-react";
+
+const city = import("@pmndrs/assets/hdri/city.exr");
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -61,18 +64,12 @@ export default function Home() {
             <div className="h-96 mb-10">
               <Canvas shadows dpr={[1, 2]} camera={{ fov: 50 }}>
                 <Suspense fallback={null}>
-                  <Stage
-                    controls={ref}
-                    preset="rembrandt"
-                    intensity={1}
-                    environment="city"
-                  >
-                    <Model />
-                  </Stage>
+                  <Environment files={suspend(city).default} />
+                  <Gltf castShadow receiveShadow src="suzanne.gltf" />
                 </Suspense>
                 <OrbitControls ref={ref} autoRotate />
               </Canvas>
-              <div className="text-center">
+              {/* <div className="text-center">
                 <Link
                   href="https://skfb.ly/6WExH"
                   className=" text-gray-700 no-underline hover:underline text-sm dark:text-gray-300"
@@ -80,7 +77,7 @@ export default function Home() {
                 >
                   Model by Roman Mad
                 </Link>
-              </div>
+              </div> */}
             </div>
             <div className="rounded bg-gray-200 p-4 text-center dark:text-gray-200 dark:bg-slate-600">
               Hello, I am Software Engineer from Indonesia
